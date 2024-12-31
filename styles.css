@@ -171,9 +171,9 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
-    margin-bottom: 20px;
+    margin: 0 auto;
 }
 
 .product-card {
@@ -332,6 +332,85 @@ body {
     animation: fadeIn 1s ease;
 }
 
+/* Services section */
+.services {
+    padding: 60px 20px;
+    background-color: #f5fffa;
+}
+
+.services-header {
+    text-align: center;
+}
+
+.services-header h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.services-header p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-item {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: tranform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.services-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.services-item h3 {
+    font-size: 1.5rem;
+    color: #f57c00;
+    margin-bottom: 10px;
+}
+
+.services-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services-item {
+    animation: slideUp 1s ease;
+}
+
+/* Support section */
+
+
 @media(max-width: 768px) {
     .menu {
         flex-direction: column;
@@ -375,5 +454,10 @@ body {
 
     .solution-icon img {
         margin-bottom: 10px;
+    }
+
+    /* Services section */
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }

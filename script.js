@@ -59,3 +59,16 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Animate services on scroll
+const servicesItems = document.querySelectorAll('.services-item');
+
+window.addEventListener('scroll', () => {
+  servicesItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      item.style.opacity = 1;
+      item.style.transform = 'translateY(0)';
+    }
+  });
+});
