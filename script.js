@@ -45,3 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
     subtitle.style.animationDelay = '0.5s';
   }, 100);
 });
+
+
+// Add scroll animation to solutions
+const solutionItems = document.querySelectorAll('.solution-item');
+
+window.addEventListener('scroll', () => {
+  solutionItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    if(rect.top < window.innerHeight) {
+      item.style.opacity = 1;
+      item.style.transform = 'translateY(0)';
+    }
+  });
+});
