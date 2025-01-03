@@ -72,3 +72,32 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const carouselInner = document.querySelector(".carousel-inner");
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  let currentIndex = 0;
+
+  // Function to update the carousel
+  function updateCarousel() {
+    // Remove active class from all items
+    carouselItems.forEach((item) => item.classList.remove("active"));
+
+    // Add active class to the current item
+    carouselItems[currentIndex].classList.add("active");
+
+    // Calculate the offset for sliding
+    const offset = -currentIndex * 100; // Move by 100% per slide
+    carouselInner.style.transform = `translateX(${offset}%)`;
+
+    // Update index for next slide
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+  }
+
+  // Automatically update carousel every 5 seconds
+  setInterval(updateCarousel, 5000);
+
+  // Initialize carousel
+  updateCarousel();
+});
